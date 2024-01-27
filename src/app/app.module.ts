@@ -10,6 +10,7 @@ import { CardActionComponent } from './card-action/card-action.component';
 import { MiniCardComponent } from './mini-card/mini-card.component';
 import { UnionistDirective } from './unionist.directive';
 import { CompanyDirective } from './company.directive';
+import { ModalComponent } from './global/components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { CompanyDirective } from './company.directive';
     CompanyDirective
   ],
   imports: [
+    ModalComponent,
     BrowserModule,
     AppRoutingModule
   ],
