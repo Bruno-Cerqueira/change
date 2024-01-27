@@ -9,6 +9,7 @@ export interface TodoService {
    * Returns a of all of the current user's todos.
    */
    getTodo: () => Todo;
+   changeTodo: (word: string) => Todo;
 }
 
 export const TodoServiceToken = new InjectionToken<TodoService>('TodoService');

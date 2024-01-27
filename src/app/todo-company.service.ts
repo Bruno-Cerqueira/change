@@ -5,12 +5,16 @@ import { Todo, TodoService } from './todo.service';
   providedIn: 'root'
 })
 export class TodoCompanyService implements TodoService {
-
+  todo: Todo = {
+    action: 'I want money',
+  };
+  
   getTodo() {
-    const todo: Todo = {
-      action: 'I want money',
-    };
+    return this.todo;
+  }
 
-    return todo;
+  changeTodo(word = "money") {
+    this.todo = {action: word};
+    return this.todo;
   }
 }

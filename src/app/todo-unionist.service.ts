@@ -5,12 +5,16 @@ import { Todo, TodoService } from './todo.service';
   providedIn: 'root'
 })
 export class TodoUnionistService implements TodoService{
+  todo: Todo = {
+    action: 'I want rights',
+  };
 
   getTodo() {
-    const todo: Todo = {
-      action: 'I want rights',
-    };
+    return this.todo;
+  }
 
-    return todo;
+  changeTodo(word = "money") {
+    this.todo = {action: word};
+    return this.todo;
   }
 }

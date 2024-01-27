@@ -11,7 +11,7 @@ import { Card } from '../card';
       <app-card-action (killEvent)="killResult($event)">
       </app-card-action>
       </div>
-      <app-basic-card [card]="card">
+      <app-basic-card [card]="card" [lifes]="lifes">
       </app-basic-card>
     </div>
   `,
