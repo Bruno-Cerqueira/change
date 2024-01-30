@@ -1,4 +1,6 @@
-# Change
+# Ever-evolving
+
+This project aims to be a WIP to test angular new features and play around.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
 
