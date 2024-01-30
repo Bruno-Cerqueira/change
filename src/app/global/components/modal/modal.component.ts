@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, SkipSelf } from '@angular/core';
 import { TodoCompanyService } from 'src/app/todo-company.service';
 
 @Component({
@@ -19,7 +19,7 @@ import { TodoCompanyService } from 'src/app/todo-company.service';
   styles: ``
 })
 export class ModalComponent {
-  constructor(private todoService: TodoCompanyService){}
+  constructor(@SkipSelf() private todoService: TodoCompanyService){}
   openDialog(event: any): void {
     (document.getElementById("dialog") as HTMLDialogElement).showModal()
   }
