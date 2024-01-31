@@ -6,11 +6,8 @@ import { Component, DoCheck, OnInit } from '@angular/core';
     <p>
       mini-card works!
     </p>
-    <app-modal>
-      <form method="dialog">
-        <button>OK</button>
-      </form>
-    </app-modal>
+    <app-without-context-module>
+    </app-without-context-module>
   `,
   styles: [
   ]

@@ -11,6 +11,8 @@ import { MiniCardComponent } from './mini-card/mini-card.component';
 import { UnionistDirective } from './unionist.directive';
 import { CompanyDirective } from './company.directive';
 import { ModalComponent } from './global/components/modal/modal.component';
+import { InjectCaseModule } from './inject-case/inject-case.module';
+import { WithoutContextStandaloneComponent } from './inject-case/without-context-standalone/without-context-standalone.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { ModalComponent } from './global/components/modal/modal.component';
   ],
   imports: [
     ModalComponent,
+    WithoutContextStandaloneComponent,
+    InjectCaseModule,
     BrowserModule,
     AppRoutingModule
   ],
