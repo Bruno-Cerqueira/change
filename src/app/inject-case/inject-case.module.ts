@@ -10,7 +10,7 @@ import { TodoCompanyService } from '../todo-company.service';
   imports: [
     CommonModule,
   ],
-  providers: [TodoCompanyService],
+  providers: [],
   exports: [WithoutContextModuleComponent],
 })
 export class InjectCaseModule { }

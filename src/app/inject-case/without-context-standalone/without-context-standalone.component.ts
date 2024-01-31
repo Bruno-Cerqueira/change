@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, Self, inject } from '@angular/core';
 import { TodoCompanyService } from 'src/app/todo-company.service';
 
 @Component({
@@ -14,7 +14,7 @@ import { TodoCompanyService } from 'src/app/todo-company.service';
   styles: ``
 })
 export class WithoutContextStandaloneComponent {
-  to = inject(TodoCompanyService);
+  to = inject(TodoCompanyService, { skipSelf: true });
 
   test = () => {
     console.log(this.to.getTodo());

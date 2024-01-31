@@ -1,4 +1,5 @@
 import { Component, DoCheck, OnInit } from '@angular/core';
+import { TodoCompanyService } from '../todo-company.service';
 
 @Component({
   selector: 'app-mini-card',
@@ -6,8 +7,8 @@ import { Component, DoCheck, OnInit } from '@angular/core';
     <p>
       mini-card works!
     </p>
-    <app-without-context-module>
-    </app-without-context-module>
+    <app-without-context-standalone>
+    </app-without-context-standalone>
   `,
   styles: [
   ]
