@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CardListComponent } from './card-list/card-list.component';
@@ -13,12 +13,14 @@ import { CompanyDirective } from './company.directive';
 import { ModalComponent } from './global/components/modal/modal.component';
 import { InjectCaseModule } from './inject-case/inject-case.module';
 import { WithoutContextStandaloneComponent } from './inject-case/without-context-standalone/without-context-standalone.component';
+import { WrapperForm } from './global/form/wrapper-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardListComponent,
     WrapCardComponent,
+    WrapperForm,
     BasicCardComponent,
     CardActionComponent,
     MiniCardComponent,
@@ -30,7 +32,8 @@ import { WithoutContextStandaloneComponent } from './inject-case/without-context
     WithoutContextStandaloneComponent,
     InjectCaseModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -14,7 +14,7 @@ import { TodoCompanyService } from 'src/app/todo-company.service';
   styles: ``
 })
 export class WithoutContextStandaloneComponent {
-  to = inject(TodoCompanyService, { skipSelf: true });
+  to = inject(TodoCompanyService);
 
   test = () => {
     console.log(this.to.getTodo());
