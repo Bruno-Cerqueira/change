@@ -14,6 +14,7 @@ import { ModalComponent } from './global/components/modal/modal.component';
 import { InjectCaseModule } from './inject-case/inject-case.module';
 import { WithoutContextStandaloneComponent } from './inject-case/without-context-standalone/without-context-standalone.component';
 import { WrapperForm } from './global/form/wrapper-form.component';
+import { BasicComponent } from './signal-test/basic/basic.component';
 
 @NgModule({
   declarations: [
@@ -25,9 +26,10 @@ import { WrapperForm } from './global/form/wrapper-form.component';
     CardActionComponent,
     MiniCardComponent,
     UnionistDirective,
-    CompanyDirective
+    CompanyDirective    
   ],
   imports: [
+    BasicComponent,
     ModalComponent,
     WithoutContextStandaloneComponent,
     InjectCaseModule,

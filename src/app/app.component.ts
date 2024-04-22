@@ -4,9 +4,9 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: `
   
-    <app-wrapper-form>
+    <app-basic>
       
-    </app-wrapper-form>
+    </app-basic>
   
   `,
   styles: []
