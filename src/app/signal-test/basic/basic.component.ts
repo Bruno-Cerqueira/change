@@ -19,6 +19,7 @@ import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 
     <h2>Maximum participants: {{ maximum }}</h2>
     <p>Rest teams to add; {{ computedValue() }} </p>
+    <button (click)="removeEffect()">Remove log</button>
   `,
   styles: ``
 })
@@ -38,7 +39,6 @@ export class BasicComponent {
     name: "China"
   }], {
     equal: (a, b) => {
-      console.log(b)
       return a.some(item => item.name === b.slice(-1)[0].name)
     },
   })
@@ -47,21 +47,15 @@ export class BasicComponent {
     return this.maximum - this.teams().length
   })
 
-  effect(() => {
-
-    // We just have to use the source signals 
-    // somewhere inside this effect
+  effectRef = effect((onCleanup) => {
     const teams = this.teams();
-  
-    const derivedCounter = this.derivedCounter();
-  
-    console.log(`current values: ${currentCount} 
-      ${derivedCounter}`);
-  
+    console.log(`current values: ${teams.slice(-1)[0].name}`);
+    onCleanup(() => {
+      console.log("Logs removed");
+    });
   });
 
   submit() {
-    console.log(this.form.value)
     this.teams.set([...this.teams(), {
       id: this.teams().length + 1,
       name: this.form.value.name || "default",
@@ -69,7 +63,7 @@ export class BasicComponent {
     this.form.reset()
   }
 
-  update() {
-    
+  removeEffect() {
+    this.effectRef.destroy();
   }
 }
