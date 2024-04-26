@@ -1,4 +1,4 @@
-import { Component, signal, computed } from '@angular/core';
+import { Component, signal, computed, effect } from '@angular/core';
 import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
@@ -36,11 +36,29 @@ export class BasicComponent {
   },{
     id: 2,
     name: "China"
-  }])
+  }], {
+    equal: (a, b) => {
+      console.log(b)
+      return a.some(item => item.name === b.slice(-1)[0].name)
+    },
+  })
 
   computedValue = computed(() => {
     return this.maximum - this.teams().length
   })
+
+  effect(() => {
+
+    // We just have to use the source signals 
+    // somewhere inside this effect
+    const teams = this.teams();
+  
+    const derivedCounter = this.derivedCounter();
+  
+    console.log(`current values: ${currentCount} 
+      ${derivedCounter}`);
+  
+  });
 
   submit() {
     console.log(this.form.value)
@@ -49,5 +67,9 @@ export class BasicComponent {
       name: this.form.value.name || "default",
     }])
     this.form.reset()
+  }
+
+  update() {
+    
   }
 }
